@@ -9,31 +9,3 @@ helm:
     image:
       repository: nginx
       tag: "latest"  # Multi-architecture image
-    service:
-      type: LoadBalancer
-      port: 80
-    ingress:
-      enabled: true
-      hostname: nginx.local    # Replace with your desired domain or ingress hostname
-
-resources:
-  limits:
-    cpu: 100m
-    memory: 256Mi
-  requests:
-    cpu: 50m
-    memory: 128Mi
-
-targetCustomizations:
-  - name: amd-clusters
-    clusterSelector:
-      matchLabels:
-        arch: amd64
-  - name: arm-clusters
-    clusterSelector:
-      matchLabels:
-        arch: arm64
-  - name: arm-clusters
-    clusterSelector:
-      matchLabels:
-        asd: zxc
